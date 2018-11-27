@@ -1,0 +1,30 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "soapDS": {
+    "url": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso",
+    "name": "soapDS",
+    "connector": "soap",
+    "wsdl": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL",
+    "remotingEnabled": true,
+    "operations": {
+      "ListOfCountryNamesByCode": {
+        "service": "CountryInfoService",
+        "port": "CountryInfoServiceSoap",
+        "operation": "ListOfCountryNamesByCode"
+      },
+      "listCountryNamesByName": {
+        "service": "CountryInfoService",
+        "port": "CountryInfoServiceSoap",
+        "operation": "ListOfCountryNamesByName"
+      },
+      "getCountryNameFromCode": {
+        "service": "CountryInfoService",
+        "port": "CountryInfoServiceSoap",
+        "operation": "CountryName"
+      }
+    }
+  }
+}

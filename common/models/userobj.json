@@ -1,0 +1,46 @@
+{
+  "name": "Userobj",
+  "base": "PersistedModel",
+  "plural": "userobjs",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "getDetailsById": {
+      "accepts": [
+        {
+          "arg": "id",
+          "type": "number",
+          "required": true,
+          "description": "user id",
+          "http": {
+            "source": "query"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg":"obj",
+          "type":"object"
+        }
+      ],
+      "description": "get name,countryName,language using id",
+      "http": [
+        {
+          "path": "/getDetailsById",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

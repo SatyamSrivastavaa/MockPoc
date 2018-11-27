@@ -1,0 +1,20 @@
+{
+  "name": "CountryDetail",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "countryCode": {
+      "type": "string"
+    },
+    "countryName": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

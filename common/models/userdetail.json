@@ -1,0 +1,62 @@
+{
+  "name": "Userdetail",
+  "base": "PersistedModel",
+  "plural": "userdetails",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "countryCode": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "getcountryCode": {
+      "accepts": [
+        {
+          "arg": "id",
+          "type": "number",
+          "required": true,
+          "description": "user id",
+          "http": {
+            "source": "query"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "name",
+          "type": "string",
+          "root": true,
+          "description": "user name"
+        },
+        {
+          "arg": "countryCode",
+          "type": "string",
+          "root": true,
+          "description": "user's countryCode"
+        }
+      ],
+      "description": "get countryCode using id",
+      "http": [
+        {
+          "path": "/getcountryCode",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

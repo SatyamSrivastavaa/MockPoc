@@ -1,0 +1,66 @@
+{
+  "name": "aisp-poc-repo",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": " nyc npm run unit-test",
+    "unit-test": "node specs/_run.js",
+    "lint": "eslint .",
+    "start": "node .",
+    "bdd": "gulp printhello",
+    "posttest": "npm run lint"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "fs-extra": "^7.0.1",
+    "helmet": "^3.10.0",
+    "jasmine": "^3.3.0",
+    "jasmine-console-reporter": "^3.1.0",
+    "loopback": "^3.22.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^6.2.0",
+    "loopback-connector-soap": "^5.0.0",
+    "serve-favicon": "^2.0.1",
+    "strong-error-handler": "^3.0.0",
+    "supertest": "^3.3.0",
+    "winston": "^3.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "eslint-config-loopback": "^8.0.0",
+    "gulp": "^3.9.1",
+    "nyc": "^13.1.0"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "nyc": {
+    "include": [
+      "common/**/*.js"
+    ],
+    "exclude": [
+      "specs/**/*.js",
+      "server/**/*.js",
+      "component-test/**/*.js",
+      "component-test/**/*.json"
+    ],
+    "reporter": [
+      "lcov",
+      "text",
+      "text-summary"
+    ],
+    "check-coverage": true,
+    "lines": 90,
+    "statements": 90,
+    "functions": 90,
+    "branches": 90
+  },
+  "license": "UNLICENSED",
+  "description": "aisp-poc-repo"
+}
